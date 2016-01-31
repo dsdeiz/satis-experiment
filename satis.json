@@ -1,0 +1,8 @@
+{
+    "name": "Satis Experiment",
+    "homepage": "http://packages.example.com",
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/promet/settings_compile" }
+    ],
+    "require-all": true
+}
