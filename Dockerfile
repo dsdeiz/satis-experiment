@@ -8,8 +8,8 @@ RUN apt-get install -y \
   supervisor \
   php5-cli \
   curl \
-  git
-RUN apt-get install -y cron
+  git \
+  cron
 
 # Nginx Configuration
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
