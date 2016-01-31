@@ -14,10 +14,12 @@ Playing around with Satis.
 1. `docker build -t dsdeiz/satis https://github.com/dsdeiz/satis-experiment.git`.
 2. Add a `satis.json` file.
 3. Add a `Dockerfile` following:
-  ```
-  FROM dsdeiz/satis
-  COPY satis.json /satis
-  ```
+
+    ```
+    FROM dsdeiz/satis
+    COPY satis.json /satis
+    RUN cd /satis && php bin/satis build satis.json /var/www/html
+    ```
 4. `docker build -t <name>/satis .`.
 5. `docker run -P -d <name>/satis`.
 
