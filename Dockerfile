@@ -27,7 +27,7 @@ COPY satis.json /satis
 RUN cd /satis && php bin/satis build satis.json /var/www/html
 
 # Cron
-ADD crontab /etc/cron.d/satis
+COPY crontab /etc/cron.d/satis
 RUN chmod 0644 /etc/cron.d/satis
 
 EXPOSE 80
