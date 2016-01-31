@@ -25,4 +25,8 @@ Playing around with Satis.
 
 ## TODO:
 
-`cron` is untested. :smiley:
+- `cron` is untested. :smiley:
+- Use separate containers for the following processes:
+  - nginx
+  - satis
+  - cron
