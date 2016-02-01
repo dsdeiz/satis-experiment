@@ -1,0 +1,16 @@
+web:
+  image: debian:jessie
+  tty: true
+  volumes:
+    - ./schema:/schema
+    - /usr/share/nginx/html
+satis:
+  build: satis
+  volumes_from:
+    - web
+nginx:
+  image: nginx
+  volumes_from:
+    - web
+  ports:
+    - 80:80
