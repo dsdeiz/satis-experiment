@@ -1,1 +1,0 @@
-0 * * * * root "cd /satis && php bin/satis build satis.json /var/www/html"
