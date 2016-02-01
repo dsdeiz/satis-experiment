@@ -1,32 +1,15 @@
 Playing around with Satis.
 
-## Usage:
+## Installation:
 
-### Modify `Dockerfile` from repository:
-
-1. `git clone https://github.com/dsdeiz/satis-experiment && cd satis-experiment`.
-2. Modify `satis.json`.
-3. `docker build -t <name>/satis .`.
-4. `docker run -P -d <name>/satis`.
-
-### Probably a better way:
-
-1. `docker build -t dsdeiz/satis https://github.com/dsdeiz/satis-experiment.git`.
-2. Add a `satis.json` file.
-3. Add a `Dockerfile` following:
-
-    ```
-    FROM dsdeiz/satis
-    COPY satis.json /satis
-    RUN cd /satis && php bin/satis build satis.json /var/www/html
-    ```
-4. `docker build -t <name>/satis .`.
-5. `docker run -P -d <name>/satis`.
+1. `git clone https://github.com/dsdeiz/satis-experiment`.
+2. Add a `satis.json` (or any `json` file which consists of the `satis` schema) in the **schema** directory.
+3. Run `docker-compose up -d`.
+4. Run `docker-compose run --rm satis build /schema/<satis.json> /usr/share/nginx/html`.
 
 ## TODO:
 
-- `cron` is untested. :smiley:
-- Use separate containers for the following processes:
-  - nginx
-  - satis
-  - cron
+- Need cron to run the `satis` executable image.
+- Probably a custom `nginx` vhost.
+- Possible for the `satis` service to not run during `docker-compose up`. The image only needs to be built.
+- Use a script to build `satis` so that it builds directly to `nginx`'s `root`.
