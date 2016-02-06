@@ -3,9 +3,11 @@ web:
   tty: true
   volumes:
     - ./schema:/schema
-    - /usr/share/nginx/html
+    - ./html:/usr/share/nginx/html
 satis:
   build: satis
+  volumes:
+    - /satis
   volumes_from:
     - web
 nginx:
@@ -14,3 +16,8 @@ nginx:
     - web
   ports:
     - 80:80
+cron:
+  build: cron
+  volumes_from:
+    - satis
+    - web

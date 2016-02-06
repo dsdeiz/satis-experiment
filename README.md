@@ -9,7 +9,7 @@ Playing around with Satis.
 
 ## TODO:
 
-- Need cron to run the `satis` executable image.
+- Cron needs work.
 - Probably a custom `nginx` vhost.
 - Possible for the `satis` service to not run during `docker-compose up`. The image only needs to be built.
 - Use a script to build `satis` so that it builds directly to `nginx`'s `root`.

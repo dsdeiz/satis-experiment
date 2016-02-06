@@ -1,0 +1,2 @@
+* * * * * root /satis/bin/satis build /schema/satis.json /usr/share/nginx/html
+
